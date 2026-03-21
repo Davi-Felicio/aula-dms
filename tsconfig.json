@@ -23,7 +23,10 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "@infra/*": ["src/shared/infra/*"],
-      "@academic/*": ["src/modules/academic/*"]
+      "@shared/*": ["src/shared/*"],
+      "@academic/*": ["src/modules/academic/*"],
+      "@users/*": ["src/modules/users/*"],
+      "@auth/*": ["src/modules/auth/*"]
     }
   }
 }

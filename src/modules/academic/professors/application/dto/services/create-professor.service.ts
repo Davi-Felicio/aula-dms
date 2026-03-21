@@ -1,16 +1,14 @@
-import { Injectable } from '@nestjs/common'
-import { ProfessorDto } from '../professor.dto'
+import { Injectable } from "@nestjs/common";
+import { ProfessorDto } from "../professor.dto";
 
 @Injectable()
 export class CreateProfessorService {
-
   execute(data: ProfessorDto) {
     const professor = {
       id: crypto.randomUUID(),
-      ...data
-    }
+      ...data,
+    };
 
-    return professor
+    return professor;
   }
-
 }

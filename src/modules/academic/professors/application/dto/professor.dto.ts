@@ -8,7 +8,9 @@ export class ProfessorDto {
     public specialty: string,
   ) {}
 
-  public static fromProfessor(professor: Professor | null): ProfessorDto | null {
+  public static fromProfessor(
+    professor: Professor | null,
+  ): ProfessorDto | null {
     if (!professor) return null;
     return new ProfessorDto(
       professor.name,

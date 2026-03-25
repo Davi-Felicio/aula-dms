@@ -1,4 +1,5 @@
-import * as schema from "@academic/students/infra/database/schemas/student.schema";
+import * as studentSchema from "@academic/students/infra/database/schemas/student.schema";
+import * as userSchema from "@users/infra/database/schemas/user.schema";
 import { Injectable, type OnModuleDestroy } from "@nestjs/common";
 import { drizzle } from "drizzle-orm/node-postgres";
 import { Pool } from "pg";
@@ -13,7 +14,7 @@ export class DrizzleService implements OnModuleDestroy {
       connectionString: process.env.DATABASE_URL,
     });
 
-    this.db = drizzle(this.pool, { schema });
+    this.db = drizzle(this.pool, { schema: { ...studentSchema, ...userSchema } });
   }
 
   async onModuleDestroy() {
